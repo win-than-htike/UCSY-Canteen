@@ -1,4 +1,4 @@
-package com.studyjam.ucsycanteen;
+package com.studyjam.ucsycanteen.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.studyjam.ucsycanteen.R;
+import com.studyjam.ucsycanteen.model.Restaurant;
 
 import java.util.Collections;
 import java.util.List;

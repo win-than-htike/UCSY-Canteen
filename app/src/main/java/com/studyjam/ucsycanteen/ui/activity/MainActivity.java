@@ -1,9 +1,13 @@
-package com.studyjam.ucsycanteen;
+package com.studyjam.ucsycanteen.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.studyjam.ucsycanteen.R;
+import com.studyjam.ucsycanteen.model.Restaurant;
+import com.studyjam.ucsycanteen.ui.adapter.RestaurantRvAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

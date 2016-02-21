@@ -1,4 +1,4 @@
-package com.studyjam.ucsycanteen;
+package com.studyjam.ucsycanteen.model;
 
 /**
  * Created by winthanhtike on 2/20/16.
