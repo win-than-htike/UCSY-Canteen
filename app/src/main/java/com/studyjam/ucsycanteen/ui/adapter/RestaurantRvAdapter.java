@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.studyjam.ucsycanteen.R;
 import com.studyjam.ucsycanteen.model.Restaurant;
+import com.studyjam.ucsycanteen.ui.activity.LaMinTharRestaurantDetail;
 import com.studyjam.ucsycanteen.ui.activity.SuRestaurantDetail;
 
 import java.util.Collections;
@@ -55,9 +56,15 @@ public class RestaurantRvAdapter extends RecyclerView.Adapter<RestaurantRvAdapte
                 switch (position) {
 
                     case 0:
-                        Intent i = new Intent(context,SuRestaurantDetail.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(i);
+                        Intent su = new Intent(context,SuRestaurantDetail.class);
+                        su.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(su);
+                        break;
+
+                    case 1:
+                        Intent la = new Intent(context,LaMinTharRestaurantDetail.class);
+                        la.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(la);
                         break;
 
                 }
