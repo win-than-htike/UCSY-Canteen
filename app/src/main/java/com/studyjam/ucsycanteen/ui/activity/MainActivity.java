@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.studyjam.ucsycanteen.R;
 import com.studyjam.ucsycanteen.model.Restaurant;
@@ -13,46 +15,42 @@ import com.studyjam.ucsycanteen.ui.adapter.RestaurantRvAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private RecyclerView restList;
-    private RestaurantRvAdapter restaurantRvAdapter;
-    private RecyclerView.LayoutManager layoutManager;
-
+    private ImageView su,lamin,newworld,wecom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        restList = (RecyclerView) findViewById(R.id.restaurant_list);
-        restList.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        restList.setLayoutManager(layoutManager);
-        restaurantRvAdapter = new RestaurantRvAdapter(getApplicationContext(), getData());
-        restList.setAdapter(restaurantRvAdapter);
+        su = (ImageView)findViewById(R.id.su_res);
+        lamin = (ImageView)findViewById(R.id.lamin_res);
+        newworld = (ImageView)findViewById(R.id.newworld_res);
+        wecom = (ImageView)findViewById(R.id.wecom_res);
+
+        su.setOnClickListener(this);
+        lamin.setOnClickListener(this);
+        newworld.setOnClickListener(this);
+        wecom.setOnClickListener(this);
 
 
     }
 
-    private List<Restaurant> getData() {
+    @Override
+    public void onClick(View view) {
 
-        String[] restName = {"Su", "La Min Thar", "New World", "We.Com"};
+        switch (view.getId()){
 
-        int[] restLogo = {R.drawable.shop, R.drawable.shop, R.drawable.shop, R.drawable.shop};
+            case R.id.su_res:
+                startActivity(new Intent(MainActivity.this,SuRestaurantDetail.class));
+                break;
 
-        List<Restaurant> list = new ArrayList<>();
-
-        for (int i = 0; i < restLogo.length; i++) {
-
-            Restaurant item = new Restaurant();
-            item.setImageId(restLogo[i]);
-            item.setRestName(restName[i]);
-            list.add(item);
+            case R.id.lamin_res:
+                startActivity(new Intent(MainActivity.this,LaMinTharRestaurantDetail.class));
+                break;
 
         }
-
-        return list;
 
     }
 }

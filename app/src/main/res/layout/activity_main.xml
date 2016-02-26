@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".ui.activity.MainActivity">
 
-        <android.support.v7.widget.RecyclerView
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/restaurant_list"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/Toolbar"
+            app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar" >
 
-</RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/app_name"
+                    android:textColor="#fff"
+                    android:id="@+id/toolbar_title" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/su_res"
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/su"/>
+
+                        <ImageView
+                            android:id="@+id/lamin_res"
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/lamin"/>
+
+                        <ImageView
+                            android:id="@+id/newworld_res"
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/newworld"/>
+
+                        <ImageView
+                            android:id="@+id/wecom_res"
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/wecom"/>
+
+                </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+</LinearLayout>

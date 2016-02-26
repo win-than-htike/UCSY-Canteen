@@ -54,6 +54,7 @@ public class SuRestaurantDetail extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+
                 if (position == 0) {
                     imageView.setImageResource(R.drawable.food);
                 } else {
